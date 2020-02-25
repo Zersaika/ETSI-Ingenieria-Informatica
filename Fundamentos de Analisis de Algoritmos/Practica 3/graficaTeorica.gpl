@@ -1,0 +1,16 @@
+set title "Comparación teórica"
+set key top left vertical inside
+#set grid
+set xlabel "Talla (n)"
+set ylabel "Tiempo (OEs)"
+set xrange [0:100]
+
+Lineal(x) = 6+3*x
+Binaria(x) = 4+5*(log(x)/log(2))
+Ternaria(x) = 4.5+9*(log(x)/log(3))
+plot Lineal(x), Binaria(x), Ternaria(x)
+
+
+replot
+#pause -1 "Pulsa Enter para continuar..."
+unset output
